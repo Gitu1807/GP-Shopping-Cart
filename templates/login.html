@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link href="{% static 'css/bootstrap.min.css '%}" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mx-auto mt-5 shadow p-3">
+                <h2><u>Login Form</u></h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="input1" class="form-label"><i class="bi bi-person-fill"></i>User Name:</label>
+                        <input type="email" class="form control" id="input1" placeholder="name@example.com" name="uname">
+                    </div>
+                    <div class="mb-3">
+                        <label for="input2" class="form-label"><i class="bi bi-key-fill"></i>Password:</label>
+                        <input type="password" class="form control" id="input2"  name="upass">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <input type="submit" value="Login" class="btn btn-danger">
+                        &nbsp; &nbsp; &nbsp;Already User? <a href="register">Register</a>
+                        
+                    </div>
+                    
+                </form> 
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/popper.js' %}"></script>
+
+</body>
+</html>
